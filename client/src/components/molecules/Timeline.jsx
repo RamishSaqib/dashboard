@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Chart from "react-apexcharts";
 
 
@@ -20,13 +20,15 @@ const Timeline = (props) => {
         return arr;
     };
 
+    /*
     React.useEffect(() => {
         setDateArr(dates(props));
         setCountArr(confirmed(props));
     }, [props]);
+     */
 
-    const [dateArr, setDateArr] = useState(dates(props));
-    const [countArr, setCountArr] = useState(confirmed(props));
+    const [dateArr] = useState(dates(props));
+    const [countArr] = useState(confirmed(props));
 
 
 
@@ -38,7 +40,10 @@ const Timeline = (props) => {
                 background: "#252429"
             },
             xaxis: {
-                categories: dateArr
+                categories: dateArr,
+                labels: {
+                    show: false
+                }
             },
             colors: [ "#e334e5", '#41d2e7'],
             stroke: {

@@ -37,20 +37,42 @@ html {
     padding: 0 !important;
     margin: 0 !important;
   }
+
+  .tile-container {
+    width: calc(100% - 20px) !important;
+    margin: 10px !important;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  // Add this to hide elements on mobile
+  .hide-on-desktop {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 }
 
 // App Wrapper
 .App {
   text-align: center;
   width: 100vw;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 // Feature-Tile Wrapper
 .tile-container {
   width: calc(100% - 40px);
-  margin: 20px;
+  min-height: 50px;
+
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 40px;
+
   padding: 10px;
 
   background: $default-carbon;
@@ -104,6 +126,4 @@ a {
 }
 
 // Global Overrides
-.columns {
-  margin-bottom: 0 !important;
-}
+
